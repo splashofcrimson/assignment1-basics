@@ -15,12 +15,9 @@ class Linear(torch.nn.Module):
         dtype: torch.dtype | None = None,
     ) -> None:
         super().__init__()
-        self.in_features = in_features
-        self.out_features = out_features
-        self.device = device
 
         INIT_MEAN = 0
-        INIT_STD = math.sqrt(2 / (self.in_features + self.out_features))
+        INIT_STD = math.sqrt(2 / (in_features + out_features))
 
         self.weight = nn.Parameter(torch.empty(out_features, in_features, device=device, dtype=dtype))
         nn.init.trunc_normal_(self.weight, mean=INIT_MEAN, std=INIT_STD, a=(-3.0 * INIT_STD), b=(3.0 * INIT_STD))
