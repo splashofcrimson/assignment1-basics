@@ -2,9 +2,10 @@ import json
 import multiprocessing
 import os
 from collections import Counter, defaultdict
+from collections.abc import Iterable, Iterator
 from heapq import heapify, heappop, heappush
 from pathlib import Path
-from typing import Iterable, Iterator, NamedTuple, Optional
+from typing import NamedTuple, Optional
 
 import regex as re
 
