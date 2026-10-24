@@ -36,7 +36,7 @@ python-preference = "managed"
 [tool.pytest.ini_options]
 log_cli = true
 log_cli_level = "WARNING"
-addopts = "-s"
+addopts = "-s --jaxtyping-packages=cs336_basics,tests.adapters,beartype.beartype"
 
 [tool.ruff]
 line-length = 120
@@ -47,6 +47,7 @@ line-length = 120
 
 [dependency-groups]
 dev = [
+    "beartype>=0.23.1",
     "snakeviz>=2.2.2",
 ]
 
